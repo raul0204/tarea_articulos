@@ -11,7 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.nfsm.springboot.web.app.models.*;
 
 @Controller
+
 public class indexController {
+	@RequestMapping ("/index")
+	public String index(Model model) {
+		model.addAttribute("saludo", "Lista de productos en equipo");
+		model.addAttribute("praxedis", "Praxedis Calleja Sanchez");
+		model.addAttribute("adriel", "Adriel Cante Balam");
+		model.addAttribute("Raul", "Raul Efrain Lopez Mendez");
+		return "index";
+	}
+	
+	
+	
 	
 	@RequestMapping ("/articulo")
 	public String articulo (Model model) {

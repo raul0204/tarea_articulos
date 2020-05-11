@@ -1,10 +1,30 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title th:text="${titulo}"></title>
-</head>
-<body>
-
-</body>
+    <head>
+        <meta charset="UTF-8"/>
+        <title th:text="${titulo}">Spring Boot</title>
+    </head>
+    <body>     
+        <h1 th:text="${titulo}"></h1> 
+        <div th:if="${articulos.size()==0}">No hay elemetos en la lista</div>
+        <table th:if="${not articulos.isEmpty()}">
+        <thead>
+        <tr>
+       <th>Descripcion</th>
+         <th>Precio</th>
+          <th>Marca</th>
+          <th>Cantidad</th>
+          <th>Proveedor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="articulo: ${articulos}">
+        <td th:text="${articulo.Descripcion}"></td>
+        <td th:text="${articulo.Precio}"></td>
+        <td th:text="${articulo.Marca}"></td>
+        <td th:text="${articulo.Cantidad}"></td>
+        <td th:text="${articulo.Proveedor}"></td>
+        </tr>
+        </tbody>
+        </table>
+    </body>
 </html>
